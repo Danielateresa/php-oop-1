@@ -10,15 +10,16 @@ class Movie
 {
     //variabili d'istanza
     public $name;
-    public $genre;
+    public $genres;
     public $description;
     public $duration;
 
+
     //costruttore
-    public function __construct($name, $genre, $description, $duration)
+    public function __construct($name, $genres, $description, $duration)
     {
         $this->name = $name;
-        $this->genre = $genre;
+        $this->genres = $genres;
         $this->description = $description;
         $this->duration = $duration;
     }
@@ -34,16 +35,36 @@ class Movie
     public function getMovieDetails()
     {
         return "Title: " . $this->name . "<br/>".
-         "Genre: " . $this->genre . "<br/>" .
+         "Genre: " . $this->genres . "<br/>" .
          "Description: " . $this->description . "<br/>" .
-         "Duration: " . $this->duration . "min" . "<br/>";
+         "Duration: " . $this->duration . "<br/>";
     }
 }
 
+/* class Genre
+{
+    public $fantasy;
+    public $drama;
+    public $horror;
+
+    public function __construct($fantasy, $drama, $horror)
+    {
+        $this->fantasy = $fantasy;
+        $this->drama = $drama;
+        $this->horror = $horror;
+    }
+} */
+
+/* $genres = [
+    new Genre('fantasy'),
+    new Genre('drama'),
+    new Genre('horror')
+]; */
+
 //oggetti Movie
-$VanillaSky = new Movie('Vanilla Sky', 'fantastic', 'David Aames è un ricco ed affascinante giovane ereditiere..', 136);
+$VanillaSky = new Movie('Vanilla Sky', 'fantasy', 'David Aames è un ricco ed affascinante giovane ereditiere..', 136);
 $TaxiDriver = new Movie('Taxi Driver', 'drama', 'Travis Bickle è un ventiseienne disadattato e alienato, ex Marine in Vietnam..', 114);
-$TheLordOfTheRings = new Movie('The Lord Of The Rings', 'fantastic', 'Ambientato nel mondo immaginario della Terra di Mezzo..', 178);
+$TheLordOfTheRings = new Movie('The Lord Of The Rings', 'fantasy', 'Ambientato nel mondo immaginario della Terra di Mezzo..', 178);
 
 $TheLordOfTheRings->isLongFilm(178);
 
