@@ -30,15 +30,29 @@ class Movie
             $this->duration .= ' - long movie';
         }
     }
+
+    public function getMovieDetails()
+    {
+        return "Title: " . $this->name . "<br/>".
+         "Genre: " . $this->genre . "<br/>" .
+         "Description: " . $this->description . "<br/>" .
+         "Duration: " . $this->duration . "min" . "<br/>";
+    }
 }
 
 //oggetti Movie
-$VanillaSky = new Movie('Vanilla Sky', 'fantastico', 'David Aames è un ricco ed affascinante giovane ereditiere', 136);
-$TaxiDriver = new Movie('Taxi Driver', 'drammatico', 'Travis Bickle è un ventiseienne disadattato e alienato, ex Marine in Vietnam', 114);
-$TheLordOfTheRings = new Movie('The Lord Of The Rings', 'fantastico', 'Ambientato nel mondo immaginario della Terra di Mezzo', 178);
+$VanillaSky = new Movie('Vanilla Sky', 'fantastic', 'David Aames è un ricco ed affascinante giovane ereditiere..', 136);
+$TaxiDriver = new Movie('Taxi Driver', 'drama', 'Travis Bickle è un ventiseienne disadattato e alienato, ex Marine in Vietnam..', 114);
+$TheLordOfTheRings = new Movie('The Lord Of The Rings', 'fantastic', 'Ambientato nel mondo immaginario della Terra di Mezzo..', 178);
 
 $TheLordOfTheRings->isLongFilm(178);
 
 var_dump($VanillaSky);
 var_dump($TaxiDriver);
 var_dump($TheLordOfTheRings);
+
+echo $VanillaSky->getMovieDetails();
+echo $TaxiDriver->getMovieDetails();
+echo $TheLordOfTheRings->getMovieDetails();
+
+?>
