@@ -25,7 +25,7 @@ class Movie
     }
 
     //metodo
-    public function isLongFilm($duration)
+    public function isLongMovie($duration)
     {
         if ($duration > 150) {
             $this->duration .= ' - long movie';
@@ -62,18 +62,49 @@ class Movie
 ]; */
 
 //oggetti Movie
-$VanillaSky = new Movie('Vanilla Sky', 'fantasy', 'David Aames è un ricco ed affascinante giovane ereditiere..', 136);
-$TaxiDriver = new Movie('Taxi Driver', 'drama', 'Travis Bickle è un ventiseienne disadattato e alienato, ex Marine in Vietnam..', 114);
-$TheLordOfTheRings = new Movie('The Lord Of The Rings', 'fantasy', 'Ambientato nel mondo immaginario della Terra di Mezzo..', 178);
+$Movies = [
+$VanillaSky = new Movie('Vanilla Sky', 'fantasy', 'David Aames è un ricco ed affascinante giovane ereditiere..', 136),
+$TaxiDriver = new Movie('Taxi Driver', 'drama', 'Travis Bickle è un ventiseienne disadattato e alienato, ex Marine in Vietnam..', 114),
+$TheLordOfTheRings = new Movie('The Lord Of The Rings', 'fantasy', 'Ambientato nel mondo immaginario della Terra di Mezzo..', 178),
+];
+$TheLordOfTheRings->isLongMovie(178);
 
-$TheLordOfTheRings->isLongFilm(178);
-
-var_dump($VanillaSky);
+/* var_dump($VanillaSky);
 var_dump($TaxiDriver);
-var_dump($TheLordOfTheRings);
+var_dump($TheLordOfTheRings); */
 
-echo $VanillaSky->getMovieDetails();
+/* echo $VanillaSky->getMovieDetails();
 echo $TaxiDriver->getMovieDetails();
-echo $TheLordOfTheRings->getMovieDetails();
+echo $TheLordOfTheRings->getMovieDetails(); */
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>php-oop-1</title>
+</head>
+
+<body>
+
+    <h1>Movies Info</h1>
+
+    <ul>
+        <?php foreach ($Movies as $Movie) :?>
+        <li>
+            <h3>Title: <?php echo $Movie->name ?></h3>
+            <p>Genre: <?php echo $Movie->genres ?></p>
+            <p>Description: <?php echo $Movie->description ?></p>
+            <p>Duration: <?php echo $Movie->duration ?></p>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+
+
+</body>
+
+</html>
