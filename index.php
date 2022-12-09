@@ -36,7 +36,7 @@ main {
 
 .card {
     min-height: 280px;
-    background-color: #171718;
+    background: linear-gradient(#121212, #2e2e2e);
 }
 
 .container {
@@ -68,7 +68,7 @@ p {
             <div class="row g-3 h-100">
                 <?php foreach ($Movies as $Movie) :?>
                 <div class="col-4 my-5">
-                    <div class="card px-2 py-4">
+                    <div class="card border-0 px-2 py-4">
                         <h3><?php echo $Movie->name ?></h3>
                         <p>Genre:
                             <span>
