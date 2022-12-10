@@ -16,6 +16,7 @@
             </div>
 
         </ul>
+        <!-- ul -->
 
         <button class="button btn">
             <a class="btn" href="#">search <i class="fa-solid fa-magnifying-glass"></i></a>
