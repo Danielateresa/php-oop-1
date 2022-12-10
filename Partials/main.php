@@ -1,8 +1,8 @@
 <main class="bg-black">
-    <div class="container h-100">
+    <div class="container h-100 my-5">
         <div class="row g-3 h-100">
             <?php foreach ($Movies as $Movie) :?>
-            <div class="col-4 my-5">
+            <div class="col-4">
                 <div class="card border-0 px-4 py-4 d-flex justify-content-between">
                     <h3><?php echo $Movie->name ?></h3>
                     <p>Genre:
