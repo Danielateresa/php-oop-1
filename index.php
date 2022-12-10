@@ -22,72 +22,27 @@ require __DIR__ . '/db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>php-oop-1</title>
 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <!-- my style -->
+    <link rel="stylesheet" href="./css/style.css">
+
 </head>
-
-<style>
-main {
-    height: calc(100% - 69px);
-    background: color: #212529;
-}
-
-.card {
-    min-height: 280px;
-    background: linear-gradient(#121212, #2e2e2e);
-}
-
-.container {
-    max-width: 900px;
-}
-
-header {
-    background-color: #212529;
-}
-
-h3 {
-    color: #d7d7d7;
-}
-
-p {
-    color: gray;
-}
-</style>
 
 <body class="vh-100">
 
-    <div id="header" class="text-center text-black py-2">
-        <h1 class="pb-3">Movies Info</h1>
-    </div>
-    <!-- /#header -->
-
-    <main class="bg-black">
-        <div class="container h-100">
-            <div class="row g-3 h-100">
-                <?php foreach ($Movies as $Movie) :?>
-                <div class="col-4 my-5">
-                    <div class="card border-0 px-2 py-4">
-                        <h3><?php echo $Movie->name ?></h3>
-                        <p>Genre:
-                            <span>
-                                <?php foreach ($Movie->genres as $singleGenre) :?>
-                                <?php echo $singleGenre->diffGenre ?>
-                                <?php endforeach; ?>
-                            </span>
-                        </p>
-
-                        <p>Description: <?php echo $Movie->description ?></p>
-                        <p>Duration: <?php echo $Movie->duration ?></p>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-    </main>
-    <!-- /#main -->
+    <?php
+require __DIR__ . '/Partials/header.php';
+require __DIR__ . '/Partials/main.php';
+require __DIR__ . '/Partials/footer.php';
+?>
 
 </body>
 
